@@ -14,6 +14,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     return scrollY.onChange(latest => {
+      console.log(latest);
       setScrollPosition(latest);
     });
   }, [scrollY]);
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
     <div className="bg-black/75">
       <div
         ref={scrollRef}
-        className="py-40 text-center space-y-40 max-h-screen overflow-y-scroll"
+        className="py-40 text-center flex flex-col gap-y-40 max-h-screen overflow-y-scroll"
       >
         <motion.p
           style={{

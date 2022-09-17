@@ -14,7 +14,10 @@ const Text = ({ text, secondaryText, scrollPosition }: Props) => {
     target: ref,
   });
 
-  console.log(scrollY)
+  useEffect(() => {
+    ref.current && console.log(ref.current.offsetTop)
+  },[ref, ref.current])
+
 
   return (
     <motion.p
